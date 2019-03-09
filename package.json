@@ -1,0 +1,30 @@
+{
+  "name": "chat-example",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "server.js",
+  "repository": "",
+  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "run": "nodemon server/server.js",
+    "start": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "express": "^3.2.6",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

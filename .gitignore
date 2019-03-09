@@ -1,0 +1,7 @@
+node_modules
+.c9
+**/.next
+*.pdf
+*.docx
+.env
+*.md

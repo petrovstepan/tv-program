@@ -1,0 +1,12 @@
+.channels-list {
+    
+}
+
+.channels-list__item {
+    height: 50px;
+    line-height: 50px;
+}
+
+.channels-list__item-title {
+    vertical-align: middle;
+}
