@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^11.8.0"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@quentin-sommer/react-useragent": "^2.0.0",
