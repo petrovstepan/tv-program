@@ -57,7 +57,8 @@
     "prettier": "prettier --write src/**/**/*.js pages/*.js server/**/**/*.js api/*.js",
     "build": "next build",
     "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Stepan Petrov",
   "license": "ISC"

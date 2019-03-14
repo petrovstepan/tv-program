@@ -60,8 +60,15 @@ app.prepare().then(async () => {
     return handle(req, res)
   })
 
-  server.listen(port, host, err => {
-    if (err) throw err
-    console.log(`> Ready on ${host}:${port}`)
-  })
+  if (process.env.ENGINE === 'Heroku') {
+    server.listen(port, err => {
+      if (err) throw err
+      console.log(`> Ready on heroku on ${port}`)
+    })
+  } else {
+    server.listen(port, host, err => {
+      if (err) throw err
+      console.log(`> Ready on ${host}:${port}`)
+    })
+  }
 })
