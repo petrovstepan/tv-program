@@ -2,23 +2,22 @@ import React from 'react'
 import NextDocument, { Head, Main, NextScript } from 'next/document'
 
 class Document extends NextDocument {
-    static async getInitialProps(ctx) {
-        const initialProps = await NextDocument.getInitialProps(ctx)
-        return { ...initialProps }
-    }
+  static async getInitialProps(ctx) {
+    const initialProps = await NextDocument.getInitialProps(ctx)
+    return { ...initialProps }
+  }
 
-    render() {
-        return (
-            <html>
-            <Head>
-            </Head>
-            <body>
-            <Main />
-            <NextScript />
-            </body>
-            </html>
-        )
-    }
+  render() {
+    return (
+      <html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
+  }
 }
 
 export default Document
