@@ -1,0 +1,19 @@
+aside {
+  position: absolute;
+  top: 0px;
+  padding: 11vh 20px 0 20px;
+  left: -200px;
+  transition: left 500ms;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+
+  a {
+    z-index:1500;
+  }
+
+  &.open{
+    transition: left 500ms;
+    left: 0px;
+  }
+}

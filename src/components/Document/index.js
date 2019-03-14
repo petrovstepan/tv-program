@@ -1,3 +1,4 @@
+import React from 'react'
 import NextDocument, { Head, Main, NextScript } from 'next/document'
 
 class Document extends NextDocument {
@@ -10,9 +11,8 @@ class Document extends NextDocument {
         return (
             <html>
             <Head>
-                <style>{`body { margin: 0 } /* custom! */`}</style>
             </Head>
-            <body className="custom_class">
+            <body>
             <Main />
             <NextScript />
             </body>

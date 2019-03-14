@@ -1,31 +1,33 @@
-import Link from 'next/link'
+import React from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+import {UserAgent} from "@quentin-sommer/react-useragent";
 
-export default ({ children, title = 'This is the default title' }) => (
-    <div>
+const MobileLayout = dynamic(() => import('./Mobile'))
+const DesktopLayout = dynamic(() => import('./Desktop'))
+
+
+const Layout = ({ children, title }) => (
+    <React.Fragment>
         <Head>
             <title>{title}</title>
             <meta charSet='utf-8' />
             <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         </Head>
-        <header>
-            <nav>
-                <Link href='/'>
-                    <a>Home</a>
-                </Link>{' '}
-                |
-                <Link href='/about'>
-                    <a>About</a>
-                </Link>{' '}
-                |
-                <Link href='/contact'>
-                    <a>Contact</a>
-                </Link>
-            </nav>
-        </header>
-
-        {children}
-
-        <footer>{'I`m here to stay'}</footer>
-    </div>
+        <UserAgent mobile>
+            {
+                m => m ? (
+                    <MobileLayout>
+                        {children}
+                    </MobileLayout>
+                ) : (
+                    <DesktopLayout>
+                        {children}
+                    </DesktopLayout>
+                )
+            }
+        </UserAgent>
+    </React.Fragment>
 )
+
+export default Layout

@@ -1,0 +1,66 @@
+$min-width: 992px;
+$max-width: 1200px;
+
+.desktop {
+
+  header {
+    display: block;
+    width: 100vw;
+    background: #616161;
+    padding: 0 10px;
+
+    .header-wrapper {
+      margin: 0 auto;
+      height: 10vh;
+      line-height: 10vh;
+      width: 100%;
+      min-width: $min-width;
+      max-width: $max-width;
+
+      nav {
+        height: 100%;
+        width: 100%;
+      }
+
+      ul {
+        display: inline-block;
+      }
+    }
+  }
+
+  main {
+    padding: 10px 10px 0 10px;
+
+    .content-wrapper {
+      width: 100%;
+      min-width: $min-width;
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn {
+  padding: 0.5em;
+  background: #ff6e40;
+  cursor: pointer;
+  border-radius: 0.2em;
+  font-size: 1em;
+  transition: box-shadow 500ms;
+
+
+  &:hover {
+    transition: box-shadow 500ms;
+    box-shadow: 0 0 10px #ff6e40;
+  }
+
+  &:focus {
+    transition: box-shadow 500ms;
+    box-shadow: 0 0 10px #ff6e40;
+  }
+}
+
+
+.app {
+  font-size: calc(10px + 1vmin);
+}

@@ -1,0 +1,23 @@
+.channel {
+
+  .channel__description {
+    margin: 10px 0 20px 0;
+  }
+
+  .channel__header {
+    display: inline-block;
+    height: 8rem;
+    line-height: 8rem;
+
+    .channel__title {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-left: 20px;
+      @media screen and (max-width: 480px){
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.program {
+  line-height: 2em;
+  display: inline-block;
+
+  .program__text {
+    margin-left: 5px;
+    display: inline-block;
+    line-height: 1.5em;
+    padding-right: 5px;
+  }
+}

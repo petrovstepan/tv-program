@@ -1,0 +1,34 @@
+.mobile {
+
+  header {
+    display: block;
+    width: 100vw;
+    background: #616161;
+    padding: 0 10px;
+
+    .header-wrapper {
+      margin: 0 auto;
+      height: 10vh;
+      line-height: 10vh;
+      width: 100%;
+
+      nav {
+        height: 100%;
+        width: 100%;
+      }
+
+      ul {
+        display: inline-block;
+      }
+    }
+  }
+
+  main {
+    padding: 10px 10px 0 10px;
+
+    .content-wrapper {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

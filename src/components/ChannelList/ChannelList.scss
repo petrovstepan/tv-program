@@ -1,0 +1,14 @@
+.channel-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &:after {
+    content: '';
+    flex: 1;
+  }
+}
+
+.channel-list-wrapper {
+  overflow: hidden;
+  margin-left: -1%;
+}

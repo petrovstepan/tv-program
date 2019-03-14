@@ -1,14 +1,14 @@
+require('./server/withEnv')()
 const withSass = require('@zeit/next-sass')
+const withCSS = require('@zeit/next-css')
 
-module.exports = {
+module.exports = withCSS(withSass({
+    cssModules: false,
     useFileSystemPublicRoutes: false,
-    dir: 'src',
-    webpack: withSass(
-        (config,
+    webpack: (config,
          { buildId, dev, isServer, defaultLoaders }) => {
-            console.log(defaultLoaders)
         return config
-    }),
+    },
 
     serverRuntimeConfig: {
 
@@ -16,4 +16,4 @@ module.exports = {
     publicRuntimeConfig: {
 
     }
-}
+}))
