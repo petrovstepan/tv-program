@@ -2,9 +2,9 @@ const {
   getTimeForPrograms,
 } = require('../src/utils/channel-n-program-data-handler')
 const axios = require('axios')
+const domain = require('../config/domain')
 
 const host = 'http://epg.domru.ru'
-const domain = 'perm'
 
 const get = (url, params = {}) =>
   axios

@@ -9,7 +9,7 @@ const api = require('../../api')
 const cache = require('../node-cache').getInstance()
 
 /**
- * Загрузка каналов и сохранение в кэщ
+ * Загрузка каналов и сохранение в кэш
  * @returns {Promise<*>}
  */
 async function initializeChannelsCache() {

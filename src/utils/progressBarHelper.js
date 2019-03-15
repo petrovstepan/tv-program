@@ -1,4 +1,4 @@
-import colors from '../components/config/program-completion-colors'
+import colors from '../../config/program-completion-colors'
 
 const getNearestColor = pcnt => (acc, v) =>
   Math.abs(acc - pcnt) < Math.abs(v - pcnt) ? acc : v

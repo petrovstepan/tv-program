@@ -1,36 +1,41 @@
+const timezoneOffset = require('../../config/domain-timezone')
+const domain = require('../../config/domain')
+const isServer = typeof window === 'undefined'
+
+const getOffsetInMinutes = () =>
+  (timezoneOffset[domain] &&
+    new Date().getTimezoneOffset() - timezoneOffset[domain]) ||
+  0
+
+const getOffset = () => getOffsetInMinutes() * 60 * 1000
+
+const getOffsetTime = () => +new Date(Date.now() + getOffset())
+const getTime = () => (isServer ? getOffsetTime() : Date.now())
+
 const progIsShowingNow = (start, duration) => {
   const s = new Date(start)
   const e = new Date(+s + duration * 1000)
-  const now = Date.now()
+  const now = getTime()
   return now >= +s && now < +e
 }
 
 const progWillRunInTheFuture = start => {
   const s = new Date(start)
-  const now = Date.now()
+  const now = getTime()
   return now < +s
 }
 
 const progWillEndInNMinutes = (start, duration) => {
-  const now = Date.now()
+  const now = getTime()
   const end = +new Date(+new Date(start) + duration * 1000)
   return end - now
 }
 
 const progWillBeginInNMinutes = start => {
-  const now = Date.now()
+  const now = getTime()
   const s = +new Date(start)
   const diff = s - now
   return diff > 0 ? diff : 0
-}
-
-const getCompletionPercent = (start, duration) => {
-  const d = duration * 1000
-  const s = new Date(start)
-  const e = new Date(+s + d)
-  const now = new Date()
-  const complete = Math.round(+e - now > 0 ? ((+now - s) / d) * 100 : 100)
-  return complete ? complete : 1
 }
 
 const selectActiveProgram = programs => {
@@ -47,7 +52,6 @@ const selectActiveProgram = programs => {
 
 module.exports = {
   selectActiveProgram,
-  getCompletionPercent,
   progWillBeginInNMinutes,
   progWillEndInNMinutes,
   progWillRunInTheFuture,

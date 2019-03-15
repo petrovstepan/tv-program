@@ -3,7 +3,7 @@ const {
   programsForTheNextNHours,
   startHoursOffset,
   numberOfProgramsToShow,
-} = require('../components/config/channel-list-config')
+} = require('../../config/channel-list-config')
 
 const {
   progIsShowingNow,
